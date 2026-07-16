@@ -1,0 +1,178 @@
+/* Design Variables */
+:root {
+  --bg-main: #0b0f19;
+  --bg-card: #131a26;
+  --bg-input: #1b2433;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: #243145;
+  --primary: #3b82f6;
+  --danger: #ef4444;
+}
+
+/* Global Document Reset */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 900px;
+  padding: 3rem 1.5rem;
+}
+
+/* Header UI */
+.app-header {
+  margin-bottom: 2.5rem;
+}
+
+.app-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 0 0 0.25rem 0;
+}
+
+.app-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* 2-Column Desktop Grid / 1-Column Mobile Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+/* Modular Panels */
+.panel-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.panel-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+/* Form Styles */
+.minimal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+input {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary);
+}
+
+/* Button Mechanics */
+.btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-submit {
+  background-color: var(--text-main);
+  color: var(--bg-main);
+  padding: 0.75rem;
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: var(--danger);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.75rem;
+}
+
+.btn-delete:hover {
+  border-color: var(--danger);
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* Lists and Registry Records */
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.user-item:last-child {
+  border-bottom: none;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-fullname {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.user-subtext {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.status-msg {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.error-msg {
+  color: var(--danger);
+}
